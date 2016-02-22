@@ -1,9 +1,9 @@
 //
 //  NSData+Gzip.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 14/12/30.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 
@@ -18,19 +18,19 @@ extern NSString* const GzipErrorDomain;
  *
  *  @return 压缩后的数据
  */
-- (NSData *)gzippedDataWithCompressionLevel:(float)level;
+- (NSData *)eq_gzippedDataWithCompressionLevel:(float)level;
 
 /**
  *  @brief  GZIP压缩 压缩级别 默认-1
  *
  *  @return 压缩后的数据
  */
-- (NSData *)gzippedData;
+- (NSData *)eq_gzippedData;
 
 /**
  *  @brief  GZIP解压
  *
  *  @return 解压后数据
  */
-- (NSData *)gunzippedData;
+- (NSData *)eq_gunzippedData;
 @end

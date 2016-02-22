@@ -1,9 +1,9 @@
 //
 //  NSData+Gzip.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 14/12/30.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSData+Gzip.h"
@@ -17,7 +17,7 @@
  *
  *  @return 压缩后的数据
  */
-- (NSData *)gzippedDataWithCompressionLevel:(float)level
+- (NSData *)eq_gzippedDataWithCompressionLevel:(float)level
 {
     if ([self length])
     {
@@ -57,9 +57,9 @@
  *
  *  @return 压缩后的数据
  */
-- (NSData *)gzippedData
+- (NSData *)eq_gzippedData
 {
-    return [self gzippedDataWithCompressionLevel:-1.0f];
+    return [self eq_gzippedDataWithCompressionLevel:-1.0f];
 }
 
 /**
@@ -67,7 +67,7 @@
  *
  *  @return 解压后数据
  */
-- (NSData *)gunzippedData
+- (NSData *)eq_gunzippedData
 {
     if ([self length])
     {

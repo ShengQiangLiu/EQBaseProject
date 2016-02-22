@@ -1,3 +1,10 @@
+
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
+//
+
 @import Foundation;
 
 #import <zlib.h>
@@ -11,7 +18,7 @@ NSString *const BBSZlibErrorInfoKey = @"zerror";
 
 @implementation NSData (zlib)
 
-- (NSData *)bbs_dataByInflatingWithError:(NSError *__autoreleasing *)error
+- (NSData *)eq_dataByInflatingWithError:(NSError *__autoreleasing *)error
 {
     if (![self length]) return [self copy];
     NSMutableData *outData = [NSMutableData data];
@@ -22,7 +29,7 @@ NSString *const BBSZlibErrorInfoKey = @"zerror";
     return outData;
 }
 
-- (NSData *)bbs_dataByDeflatingWithError:(NSError *__autoreleasing *)error
+- (NSData *)eq_dataByDeflatingWithError:(NSError *__autoreleasing *)error
 {
     if (![self length]) return [self copy];
     NSMutableData *outData = [NSMutableData data];
@@ -132,7 +139,7 @@ NSString *const BBSZlibErrorInfoKey = @"zerror";
     return YES;
 }
 
-- (BOOL)bbs_writeDeflatedToFile:(NSString *)path
+- (BOOL)eq_writeDeflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error
 {
     NSFileHandle *f = createOrOpenFileAtPath(path, error);
@@ -151,7 +158,7 @@ NSString *const BBSZlibErrorInfoKey = @"zerror";
     return success;
 }
 
-- (BOOL)bbs_writeInflatedToFile:(NSString *)path
+- (BOOL)eq_writeInflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error
 {
     NSFileHandle *f = createOrOpenFileAtPath(path, error);

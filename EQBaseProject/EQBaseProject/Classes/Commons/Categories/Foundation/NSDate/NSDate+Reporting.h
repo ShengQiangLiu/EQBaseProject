@@ -1,8 +1,10 @@
 //
 // NSDate+Reporting.h
+//  EQBaseProject
 //
-// Created by Mel Sampat on 5/11/12.
-// Copyright (c) 2012 Mel Sampat.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

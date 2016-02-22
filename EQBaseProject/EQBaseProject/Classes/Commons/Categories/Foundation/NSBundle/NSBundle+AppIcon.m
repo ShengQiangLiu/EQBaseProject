@@ -1,15 +1,15 @@
 //
 //  NSBundle+AppIcon.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSBundle+AppIcon.h"
 
 @implementation NSBundle (AppIcon)
-- (NSString*)appIconPath {
+- (NSString*)eq_appIconPath {
     NSString* iconFilename = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIconFile"] ;
     NSString* iconBasename = [iconFilename stringByDeletingPathExtension] ;
     NSString* iconExtension = [iconFilename pathExtension] ;
@@ -17,8 +17,8 @@
                                            ofType:iconExtension] ;
 }
 
-- (UIImage*)appIcon {
-    UIImage*appIcon = [[UIImage alloc] initWithContentsOfFile:[self appIconPath]] ;
+- (UIImage*)eq_appIcon {
+    UIImage*appIcon = [[UIImage alloc] initWithContentsOfFile:[self eq_appIconPath]] ;
     return appIcon;
 }
 @end

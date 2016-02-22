@@ -1,9 +1,10 @@
 //
 //  NSDictionary+URL.m
-//  IOS-Categories
 //
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSDictionary+URL.h"
@@ -16,7 +17,7 @@
  *
  *  @return NSDictionary
  */
-+ (NSDictionary *)dictionaryWithURLQuery:(NSString *)query
++ (NSDictionary *)eq_dictionaryWithURLQuery:(NSString *)query
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     NSArray *parameters = [query componentsSeparatedByString:@"&"];
@@ -38,7 +39,7 @@
  *
  *  @return url 参数字符串
  */
-- (NSString *)URLQueryString 
+- (NSString *)eq_URLQueryString 
 {
     NSMutableString *string = [NSMutableString string];
     for (NSString *key in [self allKeys]) {

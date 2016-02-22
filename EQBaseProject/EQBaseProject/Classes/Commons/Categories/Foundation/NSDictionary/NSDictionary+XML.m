@@ -1,9 +1,10 @@
 //
 //  NSDictionary+XML.m
-//  IOS-Categories
 //
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSDictionary+XML.h"
@@ -14,7 +15,7 @@
  *
  *  @return XML 字符串
  */
-- (NSString *)XMLString {
+- (NSString *)eq_XMLString {
     
     NSString *xmlStr = @"<xml>";
     

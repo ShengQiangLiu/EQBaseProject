@@ -1,9 +1,9 @@
 //
 //  NSData+Encrypt.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,7 +18,7 @@
  *
  *  @return data
  */
-- (NSData *)encryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv;
+- (NSData *)eq_encryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv;
 /**
  *  @brief  利用AES解密据
  *
@@ -27,7 +27,7 @@
  *
  *  @return 解密后数据
  */
-- (NSData *)decryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv;
+- (NSData *)eq_decryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv;
 
 /**
  *  利用3DES加密数据
@@ -37,7 +37,7 @@
  *
  *  @return data
  */
-- (NSData *)encryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv;
+- (NSData *)eq_encryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv;
 /**
  *  @brief   利用3DES解密数据
  *
@@ -46,12 +46,12 @@
  *
  *  @return 解密后数据
  */
-- (NSData *)decryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv;
+- (NSData *)eq_decryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv;
 
 /**
  *  @brief  NSData 转成UTF8 字符串
  *
  *  @return 转成UTF8 字符串
  */
-- (NSString *)UTF8String;
+- (NSString *)eq_UTF8String;
 @end

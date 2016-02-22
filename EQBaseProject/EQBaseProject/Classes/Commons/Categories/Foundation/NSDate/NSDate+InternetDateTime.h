@@ -1,9 +1,9 @@
 //
 //  NSDate+InternetDateTime.h
-//  MWFeedParser
+//  EQBaseProject
 //
-//  Created by Michael Waterfall on 07/10/2010.
-//  Copyright 2010 Michael Waterfall. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,11 +21,11 @@ typedef enum {
 // Get date from RFC3339 or RFC822 string
 // - A format/specification hint can be used to speed up, 
 //   otherwise both will be attempted in order to get a date
-+ (NSDate *)dateFromInternetDateTimeString:(NSString *)dateString 
++ (NSDate *)eq_dateFromInternetDateTimeString:(NSString *)dateString
                                 formatHint:(DateFormatHint)hint;
 
 // Get date from a string using a specific date specification
-+ (NSDate *)dateFromRFC3339String:(NSString *)dateString;
-+ (NSDate *)dateFromRFC822String:(NSString *)dateString;
++ (NSDate *)eq_dateFromRFC3339String:(NSString *)dateString;
++ (NSDate *)eq_dateFromRFC822String:(NSString *)dateString;
 
 @end

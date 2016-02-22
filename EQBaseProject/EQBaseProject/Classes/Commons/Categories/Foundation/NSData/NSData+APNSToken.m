@@ -1,9 +1,9 @@
 //
 //  NSData+APNSToken.m
-//  IOS-Categories
+//  EQBaseProject
 //
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSData+APNSToken.h"
@@ -14,7 +14,7 @@
  *
  *  @return 字符串token
  */
-- (NSString *)APNSToken {
+- (NSString *)eq_APNSToken {
     return [[[[self description]
               stringByReplacingOccurrencesOfString: @"<" withString: @""]
              stringByReplacingOccurrencesOfString: @">" withString: @""]

@@ -1,27 +1,27 @@
 //
 //  NSArray+Block.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSArray+Block.h"
 
 @implementation NSArray (Block)
-- (void)each:(void (^)(id object))block {
+- (void)eq_each:(void (^)(id object))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj);
     }];
 }
 
-- (void)eachWithIndex:(void (^)(id object, NSUInteger index))block {
+- (void)eq_eachWithIndex:(void (^)(id object, NSUInteger index))block {
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         block(obj, idx);
     }];
 }
 
-- (NSArray *)map:(id (^)(id object))block {
+- (NSArray *)eq_map:(id (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
     
     for (id object in self) {
@@ -31,19 +31,19 @@
     return array;
 }
 
-- (NSArray *)filter:(BOOL (^)(id object))block {
+- (NSArray *)eq_filter:(BOOL (^)(id object))block {
     return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return block(evaluatedObject);
     }]];
 }
 
-- (NSArray *)reject:(BOOL (^)(id object))block {
+- (NSArray *)eq_reject:(BOOL (^)(id object))block {
     return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return !block(evaluatedObject);
     }]];
 }
 
-- (id)detect:(BOOL (^)(id object))block {
+- (id)eq_detect:(BOOL (^)(id object))block {
     for (id object in self) {
         if (block(object))
             return object;
@@ -51,11 +51,11 @@
     return nil;
 }
 
-- (id)reduce:(id (^)(id accumulator, id object))block {
-    return [self reduce:nil withBlock:block];
+- (id)eq_reduce:(id (^)(id accumulator, id object))block {
+    return [self eq_reduce:nil withBlock:block];
 }
 
-- (id)reduce:(id)initial withBlock:(id (^)(id accumulator, id object))block {
+- (id)eq_reduce:(id)initial withBlock:(id (^)(id accumulator, id object))block {
     id accumulator = initial;
     
     for(id object in self)

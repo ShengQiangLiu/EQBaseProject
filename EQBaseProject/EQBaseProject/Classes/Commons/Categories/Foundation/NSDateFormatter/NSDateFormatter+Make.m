@@ -1,24 +1,25 @@
 //
 //  NSDateFormatter+Make.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
 //
-//  Created by Jakey on 15/4/25.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSDateFormatter+Make.h"
 
 @implementation NSDateFormatter (Make)
 
-+(NSDateFormatter *)dateFormatterWithFormat:(NSString *)format {
-    return [self dateFormatterWithFormat:format timeZone:nil];
++(NSDateFormatter *)eq_dateFormatterWithFormat:(NSString *)format {
+    return [self eq_dateFormatterWithFormat:format timeZone:nil];
 }
 
-+(NSDateFormatter *)dateFormatterWithFormat:(NSString *)format timeZone:(NSTimeZone *)timeZone {
-    return [self dateFormatterWithFormat:format timeZone:timeZone locale:nil];
++(NSDateFormatter *)eq_dateFormatterWithFormat:(NSString *)format timeZone:(NSTimeZone *)timeZone {
+    return [self eq_dateFormatterWithFormat:format timeZone:timeZone locale:nil];
 }
 
-+(NSDateFormatter *)dateFormatterWithFormat:(NSString *)format timeZone:(NSTimeZone *)timeZone locale:(NSLocale *)locale {
++(NSDateFormatter *)eq_dateFormatterWithFormat:(NSString *)format timeZone:(NSTimeZone *)timeZone locale:(NSLocale *)locale {
     if (format == nil || [format isEqualToString:@""]) return nil;
     NSString *key = [NSString stringWithFormat:@"NSDateFormatter-tz-%@-fmt-%@-loc-%@", [timeZone abbreviation], format, [locale localeIdentifier]];
     NSMutableDictionary* dictionary = [[NSThread currentThread] threadDictionary];
@@ -36,11 +37,11 @@
     return dateFormatter;
 }
 
-+(NSDateFormatter *)dateFormatterWithDateStyle:(NSDateFormatterStyle)style {
-    return [self dateFormatterWithDateStyle:style timeZone:nil];
++(NSDateFormatter *)eq_dateFormatterWithDateStyle:(NSDateFormatterStyle)style {
+    return [self eq_dateFormatterWithDateStyle:style timeZone:nil];
 }
 
-+(NSDateFormatter *)dateFormatterWithDateStyle:(NSDateFormatterStyle)style timeZone:(NSTimeZone *)timeZone {
++(NSDateFormatter *)eq_dateFormatterWithDateStyle:(NSDateFormatterStyle)style timeZone:(NSTimeZone *)timeZone {
     NSString *key = [NSString stringWithFormat:@"NSDateFormatter-%@-dateStyle-%d", [timeZone abbreviation], (int)style];
     NSMutableDictionary* dictionary = [[NSThread currentThread] threadDictionary];
     NSDateFormatter* dateFormatter = [dictionary objectForKey:key];
@@ -56,11 +57,11 @@
     return dateFormatter;
 }
 
-+(NSDateFormatter *)dateFormatterWithTimeStyle:(NSDateFormatterStyle)style {
-    return [self dateFormatterWithTimeStyle:style timeZone:nil];
++(NSDateFormatter *)eq_dateFormatterWithTimeStyle:(NSDateFormatterStyle)style {
+    return [self eq_dateFormatterWithTimeStyle:style timeZone:nil];
 }
 
-+(NSDateFormatter *)dateFormatterWithTimeStyle:(NSDateFormatterStyle)style timeZone:(NSTimeZone *)timeZone {
++(NSDateFormatter *)eq_dateFormatterWithTimeStyle:(NSDateFormatterStyle)style timeZone:(NSTimeZone *)timeZone {
     NSString *key = [NSString stringWithFormat:@"NSDateFormatter-%@-timeStyle-%d", [timeZone abbreviation], (int)style];
     NSMutableDictionary* dictionary = [[NSThread currentThread] threadDictionary];
     NSDateFormatter* dateFormatter = [dictionary objectForKey:key];

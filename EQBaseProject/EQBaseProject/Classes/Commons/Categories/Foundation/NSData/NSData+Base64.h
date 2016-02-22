@@ -1,9 +1,9 @@
 //
 //  NSData+Base64.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 15/1/26.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,7 +16,7 @@
  *
  *  @return 传入字符串 base64后的data
  */
-+ (NSData *)dataWithBase64EncodedString:(NSString *)string;
++ (NSData *)eq_dataWithBase64EncodedString:(NSString *)string;
 /**
  *  @brief  NSData转string
  *
@@ -24,11 +24,11 @@
  *
  *  @return base64后的字符串
  */
-- (NSString *)base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth;
+- (NSString *)eq_base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth;
 /**
  *  @brief  NSData转string 换行长度默认64
  *
  *  @return base64后的字符串
  */
-- (NSString *)base64EncodedString;
+- (NSString *)eq_base64EncodedString;
 @end

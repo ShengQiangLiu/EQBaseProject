@@ -1,9 +1,9 @@
 //
 //  NSData+Hash.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 15/6/1.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSData+Hash.h"
@@ -12,7 +12,7 @@
 /**
  *  @brief  md5 NSData
  */
-- (NSData *)md5Data
+- (NSData *)eq_md5Data
 {
     unsigned char bytes[CC_MD5_DIGEST_LENGTH];
     CC_MD5(self.bytes, (CC_LONG)self.length, bytes);
@@ -21,7 +21,7 @@
 /**
  *  @brief  sha1Data NSData
  */
-- (NSData *)sha1Data
+- (NSData *)eq_sha1Data
 {
     unsigned char bytes[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(self.bytes, (CC_LONG)self.length, bytes);
@@ -30,7 +30,7 @@
 /**
  *  @brief  sha256Data NSData
  */
-- (NSData *)sha256Data
+- (NSData *)eq_sha256Data
 {
     unsigned char bytes[CC_SHA256_DIGEST_LENGTH];
     CC_SHA256(self.bytes, (CC_LONG)self.length, bytes);
@@ -39,7 +39,7 @@
 /**
  *  @brief  sha512Data NSData
  */
-- (NSData *)sha512Data
+- (NSData *)eq_sha512Data
 {
     unsigned char bytes[CC_SHA512_DIGEST_LENGTH];
     CC_SHA512(self.bytes, (CC_LONG)self.length, bytes);
@@ -52,8 +52,8 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacMD5DataWithKey:(NSData *)key {
-    return [self hmacDataUsingAlg:kCCHmacAlgMD5 withKey:key];
+- (NSData *)eq_hmacMD5DataWithKey:(NSData *)key {
+    return [self eq_hmacDataUsingAlg:kCCHmacAlgMD5 withKey:key];
 }
 /**
  *  @brief  sha1Data NSData
@@ -62,9 +62,9 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacSHA1DataWithKey:(NSData *)key
+- (NSData *)eq_hmacSHA1DataWithKey:(NSData *)key
 {
-    return [self hmacDataUsingAlg:kCCHmacAlgSHA1 withKey:key];
+    return [self eq_hmacDataUsingAlg:kCCHmacAlgSHA1 withKey:key];
 }
 /**
  *  @brief  sha256Data NSData
@@ -73,9 +73,9 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacSHA256DataWithKey:(NSData *)key
+- (NSData *)eq_hmacSHA256DataWithKey:(NSData *)key
 {
-    return [self hmacDataUsingAlg:kCCHmacAlgSHA256 withKey:key];
+    return [self eq_hmacDataUsingAlg:kCCHmacAlgSHA256 withKey:key];
 }
 /**
  *  @brief  sha512Data NSData
@@ -84,13 +84,13 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacSHA512DataWithKey:(NSData *)key
+- (NSData *)eq_hmacSHA512DataWithKey:(NSData *)key
 {
-    return [self hmacDataUsingAlg:kCCHmacAlgSHA512 withKey:key];
+    return [self eq_hmacDataUsingAlg:kCCHmacAlgSHA512 withKey:key];
 }
 
 
-- (NSData *)hmacDataUsingAlg:(CCHmacAlgorithm)alg withKey:(NSData *)key {
+- (NSData *)eq_hmacDataUsingAlg:(CCHmacAlgorithm)alg withKey:(NSData *)key {
 
     size_t size;
     switch (alg) {

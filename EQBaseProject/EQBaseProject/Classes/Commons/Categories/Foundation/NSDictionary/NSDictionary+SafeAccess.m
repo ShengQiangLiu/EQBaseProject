@@ -1,20 +1,21 @@
 //
 //  NSDictionary+SafeAccess.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
 //
-//  Created by Jakey on 15/1/25.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSDictionary+SafeAccess.h"
 
 @implementation NSDictionary (SafeAccess)
-- (BOOL)hasKey:(NSString *)key
+- (BOOL)eq_hasKey:(NSString *)key
 {
     return [self objectForKey:key] != nil;
 }
 
-- (NSString*)stringForKey:(id)key
+- (NSString*)eq_stringForKey:(id)key
 {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
@@ -31,7 +32,7 @@
     return nil;
 }
 
-- (NSNumber*)numberForKey:(id)key
+- (NSNumber*)eq_numberForKey:(id)key
 {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSNumber class]]) {
@@ -45,7 +46,7 @@
     return nil;
 }
 
-- (NSDecimalNumber *)decimalNumberForKey:(id)key {
+- (NSDecimalNumber *)eq_decimalNumberForKey:(id)key {
     id value = [self objectForKey:key];
     
     if ([value isKindOfClass:[NSDecimalNumber class]]) {
@@ -61,7 +62,7 @@
 }
 
 
-- (NSArray*)arrayForKey:(id)key
+- (NSArray*)eq_arrayForKey:(id)key
 {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
@@ -75,7 +76,7 @@
     return nil;
 }
 
-- (NSDictionary*)dictionaryForKey:(id)key
+- (NSDictionary*)eq_dictionaryForKey:(id)key
 {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
@@ -89,7 +90,7 @@
     return nil;
 }
 
-- (NSInteger)integerForKey:(id)key
+- (NSInteger)eq_integerForKey:(id)key
 {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
@@ -102,7 +103,7 @@
     }
     return 0;
 }
-- (NSUInteger)unsignedIntegerForKey:(id)key{
+- (NSUInteger)eq_unsignedIntegerForKey:(id)key{
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
     {
@@ -114,7 +115,7 @@
     }
     return 0;
 }
-- (BOOL)boolForKey:(id)key
+- (BOOL)eq_boolForKey:(id)key
 {
     id value = [self objectForKey:key];
     
@@ -132,7 +133,7 @@
     }
     return NO;
 }
-- (int16_t)int16ForKey:(id)key
+- (int16_t)eq_int16ForKey:(id)key
 {
     id value = [self objectForKey:key];
     
@@ -150,7 +151,7 @@
     }
     return 0;
 }
-- (int32_t)int32ForKey:(id)key
+- (int32_t)eq_int32ForKey:(id)key
 {
     id value = [self objectForKey:key];
     
@@ -164,7 +165,7 @@
     }
     return 0;
 }
-- (int64_t)int64ForKey:(id)key
+- (int64_t)eq_int64ForKey:(id)key
 {
     id value = [self objectForKey:key];
     
@@ -178,7 +179,7 @@
     }
     return 0;
 }
-- (char)charForKey:(id)key{
+- (char)eq_charForKey:(id)key{
     id value = [self objectForKey:key];
     
     if (value == nil || value == [NSNull null])
@@ -191,7 +192,7 @@
     }
     return 0;
 }
-- (short)shortForKey:(id)key
+- (short)eq_shortForKey:(id)key
 {
     id value = [self objectForKey:key];
     
@@ -209,7 +210,7 @@
     }
     return 0;
 }
-- (float)floatForKey:(id)key
+- (float)eq_floatForKey:(id)key
 {
     id value = [self objectForKey:key];
     
@@ -223,7 +224,7 @@
     }
     return 0;
 }
-- (double)doubleForKey:(id)key
+- (double)eq_doubleForKey:(id)key
 {
     id value = [self objectForKey:key];
     
@@ -237,7 +238,7 @@
     }
     return 0;
 }
-- (long long)longLongForKey:(id)key
+- (long long)eq_longLongForKey:(id)key
 {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSNumber class]]) {
@@ -246,7 +247,7 @@
     return 0;
 }
 
-- (unsigned long long)unsignedLongLongForKey:(id)key
+- (unsigned long long)eq_unsignedLongLongForKey:(id)key
 {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSString class]]) {
@@ -259,7 +260,7 @@
     return 0;
 }
 
-- (NSDate *)dateForKey:(id)key dateFormat:(NSString *)dateFormat{
+- (NSDate *)eq_dateForKey:(id)key dateFormat:(NSString *)dateFormat{
     NSDateFormatter *formater = [[NSDateFormatter alloc]init];
     formater.dateFormat = dateFormat;
     id value = [self objectForKey:key];
@@ -277,23 +278,23 @@
 
 
 //CG
-- (CGFloat)CGFloatForKey:(id)key
+- (CGFloat)eq_CGFloatForKey:(id)key
 {
     CGFloat f = [self[key] doubleValue];
     return f;
 }
 
-- (CGPoint)pointForKey:(id)key
+- (CGPoint)eq_pointForKey:(id)key
 {
     CGPoint point = CGPointFromString(self[key]);
     return point;
 }
-- (CGSize)sizeForKey:(id)key
+- (CGSize)eq_sizeForKey:(id)key
 {
     CGSize size = CGSizeFromString(self[key]);
     return size;
 }
-- (CGRect)rectForKey:(id)key
+- (CGRect)eq_rectForKey:(id)key
 {
     CGRect rect = CGRectFromString(self[key]);
     return rect;
@@ -302,58 +303,58 @@
 
 #pragma --mark NSMutableDictionary setter
 @implementation NSMutableDictionary (SafeAccess)
--(void)setObj:(id)i forKey:(NSString*)key{
+-(void)eq_setObj:(id)i forKey:(NSString*)key{
     if (i!=nil) {
         self[key] = i;
     }
 }
--(void)setString:(NSString*)i forKey:(NSString*)key;
+-(void)eq_setString:(NSString*)i forKey:(NSString*)key;
 {
     [self setValue:i forKey:key];
 }
--(void)setBool:(BOOL)i forKey:(NSString *)key
+-(void)eq_setBool:(BOOL)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)setInt:(int)i forKey:(NSString *)key
+-(void)eq_setInt:(int)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)setInteger:(NSInteger)i forKey:(NSString *)key
+-(void)eq_setInteger:(NSInteger)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)setUnsignedInteger:(NSUInteger)i forKey:(NSString *)key
+-(void)eq_setUnsignedInteger:(NSUInteger)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)setCGFloat:(CGFloat)f forKey:(NSString *)key
+-(void)eq_setCGFloat:(CGFloat)f forKey:(NSString *)key
 {
     self[key] = @(f);
 }
--(void)setChar:(char)c forKey:(NSString *)key
+-(void)eq_setChar:(char)c forKey:(NSString *)key
 {
     self[key] = @(c);
 }
--(void)setFloat:(float)i forKey:(NSString *)key
+-(void)eq_setFloat:(float)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)setDouble:(double)i forKey:(NSString*)key{
+-(void)eq_setDouble:(double)i forKey:(NSString*)key{
     self[key] = @(i);
 }
--(void)setLongLong:(long long)i forKey:(NSString*)key{
+-(void)eq_setLongLong:(long long)i forKey:(NSString*)key{
     self[key] = @(i);
 }
--(void)setPoint:(CGPoint)o forKey:(NSString *)key
+-(void)eq_setPoint:(CGPoint)o forKey:(NSString *)key
 {
     self[key] = NSStringFromCGPoint(o);
 }
--(void)setSize:(CGSize)o forKey:(NSString *)key
+-(void)eq_setSize:(CGSize)o forKey:(NSString *)key
 {
     self[key] = NSStringFromCGSize(o);
 }
--(void)setRect:(CGRect)o forKey:(NSString *)key
+-(void)eq_setRect:(CGRect)o forKey:(NSString *)key
 {
     self[key] = NSStringFromCGRect(o);
 }

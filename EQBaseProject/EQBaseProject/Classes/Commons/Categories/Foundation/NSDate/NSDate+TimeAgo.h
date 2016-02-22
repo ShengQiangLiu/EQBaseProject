@@ -1,10 +1,10 @@
 //
 //  NSDate+TimeAgo.h
+//  EQBaseProject
 //
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
-//
-//
-//  https://github.com/kevinlawler/NSDate-TimeAgo
 
 
 #import <UIKit/UIKit.h>

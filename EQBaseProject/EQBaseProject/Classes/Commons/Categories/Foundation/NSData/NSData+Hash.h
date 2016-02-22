@@ -1,9 +1,9 @@
 //
 //  NSData+Hash.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 15/6/1.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -33,7 +33,7 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacMD5DataWithKey:(NSData *)key;
+- (NSData *)eq_hmacMD5DataWithKey:(NSData *)key;
 /**
  *  @brief  sha1Data NSData
  *
@@ -41,7 +41,7 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacSHA1DataWithKey:(NSData *)key;
+- (NSData *)eq_hmacSHA1DataWithKey:(NSData *)key;
 /**
  *  @brief  sha256Data NSData
  *
@@ -49,7 +49,7 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacSHA256DataWithKey:(NSData *)key;
+- (NSData *)eq_hmacSHA256DataWithKey:(NSData *)key;
 /**
  *  @brief  sha512Data NSData
  *
@@ -57,5 +57,5 @@
  *
  *  @return 结果
  */
-- (NSData *)hmacSHA512DataWithKey:(NSData *)key;
+- (NSData *)eq_hmacSHA512DataWithKey:(NSData *)key;
 @end

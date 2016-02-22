@@ -1,9 +1,10 @@
 //
 //  NSDictionary+JSONString.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
 //
-//  Created by Jakey on 15/4/25.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,5 +15,5 @@
  *
  *  @return  JSON字符串
  */
--(NSString *)JSONString;
+-(NSString *)eq_JSONString;
 @end

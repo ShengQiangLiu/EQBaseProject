@@ -1,56 +1,56 @@
 //
 //  NSArray+SafeAccess.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Created by Jakey on 15/2/8.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface NSArray (SafeAccess)
--(id)objectWithIndex:(NSUInteger)index;
+-(id)eq_objectWithIndex:(NSUInteger)index;
 
-- (NSString*)stringWithIndex:(NSUInteger)index;
+- (NSString*)eq_stringWithIndex:(NSUInteger)index;
 
-- (NSNumber*)numberWithIndex:(NSUInteger)index;
+- (NSNumber*)eq_numberWithIndex:(NSUInteger)index;
 
-- (NSDecimalNumber *)decimalNumberWithIndex:(NSUInteger)index;
+- (NSDecimalNumber *)eq_decimalNumberWithIndex:(NSUInteger)index;
 
-- (NSArray*)arrayWithIndex:(NSUInteger)index;
+- (NSArray*)eq_arrayWithIndex:(NSUInteger)index;
 
-- (NSDictionary*)dictionaryWithIndex:(NSUInteger)index;
+- (NSDictionary*)eq_dictionaryWithIndex:(NSUInteger)index;
 
-- (NSInteger)integerWithIndex:(NSUInteger)index;
+- (NSInteger)eq_integerWithIndex:(NSUInteger)index;
 
-- (NSUInteger)unsignedIntegerWithIndex:(NSUInteger)index;
+- (NSUInteger)eq_unsignedIntegerWithIndex:(NSUInteger)index;
 
-- (BOOL)boolWithIndex:(NSUInteger)index;
+- (BOOL)eq_boolWithIndex:(NSUInteger)index;
 
-- (int16_t)int16WithIndex:(NSUInteger)index;
+- (int16_t)eq_int16WithIndex:(NSUInteger)index;
 
-- (int32_t)int32WithIndex:(NSUInteger)index;
+- (int32_t)eq_int32WithIndex:(NSUInteger)index;
 
-- (int64_t)int64WithIndex:(NSUInteger)index;
+- (int64_t)eq_int64WithIndex:(NSUInteger)index;
 
-- (char)charWithIndex:(NSUInteger)index;
+- (char)eq_charWithIndex:(NSUInteger)index;
 
-- (short)shortWithIndex:(NSUInteger)index;
+- (short)eq_shortWithIndex:(NSUInteger)index;
 
-- (float)floatWithIndex:(NSUInteger)index;
+- (float)eq_floatWithIndex:(NSUInteger)index;
 
-- (double)doubleWithIndex:(NSUInteger)index;
+- (double)eq_doubleWithIndex:(NSUInteger)index;
 
-- (NSDate *)dateWithIndex:(NSUInteger)index dateFormat:(NSString *)dateFormat;
+- (NSDate *)eq_dateWithIndex:(NSUInteger)index dateFormat:(NSString *)dateFormat;
 //CG
-- (CGFloat)CGFloatWithIndex:(NSUInteger)index;
+- (CGFloat)eq_CGFloatWithIndex:(NSUInteger)index;
 
-- (CGPoint)pointWithIndex:(NSUInteger)index;
+- (CGPoint)eq_pointWithIndex:(NSUInteger)index;
 
-- (CGSize)sizeWithIndex:(NSUInteger)index;
+- (CGSize)eq_sizeWithIndex:(NSUInteger)index;
 
-- (CGRect)rectWithIndex:(NSUInteger)index;
+- (CGRect)eq_rectWithIndex:(NSUInteger)index;
 @end
 
 
@@ -58,27 +58,27 @@
 
 @interface NSMutableArray(SafeAccess)
 
--(void)addObj:(id)i;
+-(void)eq_addObj:(id)i;
 
--(void)addString:(NSString*)i;
+-(void)eq_addString:(NSString*)i;
 
--(void)addBool:(BOOL)i;
+-(void)eq_addBool:(BOOL)i;
 
--(void)addInt:(int)i;
+-(void)eq_addInt:(int)i;
 
--(void)addInteger:(NSInteger)i;
+-(void)eq_addInteger:(NSInteger)i;
 
--(void)addUnsignedInteger:(NSUInteger)i;
+-(void)eq_addUnsignedInteger:(NSUInteger)i;
 
--(void)addCGFloat:(CGFloat)f;
+-(void)eq_addCGFloat:(CGFloat)f;
 
--(void)addChar:(char)c;
+-(void)eq_addChar:(char)c;
 
--(void)addFloat:(float)i;
+-(void)eq_addFloat:(float)i;
 
--(void)addPoint:(CGPoint)o;
+-(void)eq_addPoint:(CGPoint)o;
 
--(void)addSize:(CGSize)o;
+-(void)eq_addSize:(CGSize)o;
 
--(void)addRect:(CGRect)o;
+-(void)eq_addRect:(CGRect)o;
 @end

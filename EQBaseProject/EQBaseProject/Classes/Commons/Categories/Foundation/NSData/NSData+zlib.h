@@ -1,3 +1,9 @@
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
+//
+
 
 //https://github.com/bitbasenyc/nsdata-zlib
 @interface NSData (zlib)
@@ -28,7 +34,7 @@ typedef NS_ENUM(NSUInteger, BBSZlibErrorCode) {
  @returns An NSData instance containing the result of applying zlib
  compression to this instance.
  */
-- (NSData *)bbs_dataByDeflatingWithError:(NSError *__autoreleasing *)error;
+- (NSData *)eq_dataByDeflatingWithError:(NSError *__autoreleasing *)error;
 
 /**
  Apply zlib decompression.
@@ -39,7 +45,7 @@ typedef NS_ENUM(NSUInteger, BBSZlibErrorCode) {
  @returns An NSData instance containing the result of applying zlib
  decompression to this instance.
  */
-- (NSData *)bbs_dataByInflatingWithError:(NSError *__autoreleasing *)error;
+- (NSData *)eq_dataByInflatingWithError:(NSError *__autoreleasing *)error;
 
 /**
  Apply zlib compression and write the result to a file at path
@@ -51,7 +57,7 @@ typedef NS_ENUM(NSUInteger, BBSZlibErrorCode) {
 
  @returns @p YES if the compression succeeded; otherwise, @p NO.
  */
-- (BOOL)bbs_writeDeflatedToFile:(NSString *)path
+- (BOOL)eq_writeDeflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error;
 
 /**
@@ -64,6 +70,6 @@ typedef NS_ENUM(NSUInteger, BBSZlibErrorCode) {
 
  @returns @p YES if the compression succeeded; otherwise, @p NO.
  */
-- (BOOL)bbs_writeInflatedToFile:(NSString *)path
+- (BOOL)eq_writeInflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error;
 @end

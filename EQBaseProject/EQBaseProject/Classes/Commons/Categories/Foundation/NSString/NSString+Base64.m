@@ -12,7 +12,7 @@
 @implementation NSString (Base64)
 + (NSString *)stringWithBase64EncodedString:(NSString *)string
 {
-    NSData *data = [NSData dataWithBase64EncodedString:string];
+    NSData *data = [NSData eq_dataWithBase64EncodedString:string];
     if (data)
     {
         return [[self alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -22,12 +22,12 @@
 - (NSString *)base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    return [data base64EncodedStringWithWrapWidth:wrapWidth];
+    return [data eq_base64EncodedStringWithWrapWidth:wrapWidth];
 }
 - (NSString *)base64EncodedString
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
-    return [data base64EncodedString];
+    return [data eq_base64EncodedString];
 }
 - (NSString *)base64DecodedString
 {
@@ -35,6 +35,6 @@
 }
 - (NSData *)base64DecodedData
 {
-    return [NSData dataWithBase64EncodedString:self];
+    return [NSData eq_dataWithBase64EncodedString:self];
 }
 @end

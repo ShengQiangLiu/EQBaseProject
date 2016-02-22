@@ -1,9 +1,10 @@
 //
 //  NSDictionary+Block.m
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
 //
-//  Created by Jakey on 15/5/22.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  EQBaseProject
+//
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
 
 #import "NSDictionary+Block.h"
@@ -11,38 +12,38 @@
 @implementation NSDictionary (Block)
 
 #pragma mark - Manipulation
-- (NSDictionary *)dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary {
+- (NSDictionary *)eq_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary {
     NSMutableDictionary *result = [self mutableCopy];
     [result addEntriesFromDictionary:dictionary];
     return result;
 }
 
-- (NSDictionary *)dictionaryByRemovingEntriesWithKeys:(NSSet *)keys {
+- (NSDictionary *)eq_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys {
     NSMutableDictionary *result = [self mutableCopy];
     [result removeObjectsForKeys:keys.allObjects];
     return result;
 }
 
 #pragma mark - RX
-- (void)each:(void (^)(id k, id v))block {
+- (void)eq_each:(void (^)(id k, id v))block {
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         block(key, obj);
     }];
 }
 
-- (void)eachKey:(void (^)(id k))block {
+- (void)eq_eachKey:(void (^)(id k))block {
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         block(key);
     }];
 }
 
-- (void)eachValue:(void (^)(id v))block {
+- (void)eq_eachValue:(void (^)(id v))block {
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         block(obj);
     }];
 }
 
-- (NSArray *)map:(id (^)(id key, id value))block {
+- (NSArray *)eq_map:(id (^)(id key, id value))block {
     NSMutableArray *array = [NSMutableArray array];
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -55,11 +56,11 @@
     return array;
 }
 
-- (BOOL)hasKey:(id)key {
+- (BOOL)eq_hasKey:(id)key {
     return !!self[key];
 }
 
-- (NSDictionary *)pick:(NSArray *)keys {
+- (NSDictionary *)eq_pick:(NSArray *)keys {
     NSMutableDictionary *picked = [[NSMutableDictionary alloc] initWithCapacity:keys.count];
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -71,7 +72,7 @@
     return picked;
 }
 
-- (NSDictionary *)omit:(NSArray *)keys {
+- (NSDictionary *)eq_omit:(NSArray *)keys {
     NSMutableDictionary *omitted = [[NSMutableDictionary alloc] initWithCapacity:([self allKeys].count - keys.count)];
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {

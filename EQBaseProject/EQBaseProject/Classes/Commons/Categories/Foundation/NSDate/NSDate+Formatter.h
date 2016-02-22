@@ -1,37 +1,36 @@
 //
 //  NSDate+Formatter.h
-//  iOS-Categories (https://github.com/shaojiankui/iOS-Categories)
+//  EQBaseProject
 //
-//  Copyright (C) 2013 by Christopher Meyer
-//  http://schwiiz.org/
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 @interface NSDate (Formatter)
 
-+(NSDateFormatter *)formatter;
-+(NSDateFormatter *)formatterWithoutTime;
-+(NSDateFormatter *)formatterWithoutDate;
++(NSDateFormatter *)eq_formatter;
++(NSDateFormatter *)eq_formatterWithoutTime;
++(NSDateFormatter *)eq_formatterWithoutDate;
 
--(NSString *)formatWithUTCTimeZone;
--(NSString *)formatWithLocalTimeZone;
--(NSString *)formatWithTimeZoneOffset:(NSTimeInterval)offset;
--(NSString *)formatWithTimeZone:(NSTimeZone *)timezone;
+-(NSString *)eq_formatWithUTCTimeZone;
+-(NSString *)eq_formatWithLocalTimeZone;
+-(NSString *)eq_formatWithTimeZoneOffset:(NSTimeInterval)offset;
+-(NSString *)eq_formatWithTimeZone:(NSTimeZone *)timezone;
 
--(NSString *)formatWithUTCTimeZoneWithoutTime;
--(NSString *)formatWithLocalTimeZoneWithoutTime;
--(NSString *)formatWithTimeZoneOffsetWithoutTime:(NSTimeInterval)offset;
--(NSString *)formatWithTimeZoneWithoutTime:(NSTimeZone *)timezone;
+-(NSString *)eq_formatWithUTCTimeZoneWithoutTime;
+-(NSString *)eq_formatWithLocalTimeZoneWithoutTime;
+-(NSString *)eq_formatWithTimeZoneOffsetWithoutTime:(NSTimeInterval)offset;
+-(NSString *)eq_formatWithTimeZoneWithoutTime:(NSTimeZone *)timezone;
 
--(NSString *)formatWithUTCWithoutDate;
--(NSString *)formatWithLocalTimeWithoutDate;
--(NSString *)formatWithTimeZoneOffsetWithoutDate:(NSTimeInterval)offset;
--(NSString *)formatTimeWithTimeZone:(NSTimeZone *)timezone;
+-(NSString *)eq_formatWithUTCWithoutDate;
+-(NSString *)eq_formatWithLocalTimeWithoutDate;
+-(NSString *)eq_formatWithTimeZoneOffsetWithoutDate:(NSTimeInterval)offset;
+-(NSString *)eq_formatTimeWithTimeZone:(NSTimeZone *)timezone;
 
 
-+ (NSString *)currentDateStringWithFormat:(NSString *)format;
-+ (NSDate *)dateWithSecondsFromNow:(NSInteger)seconds;
-+ (NSDate *)dateWithYear:(NSInteger)year month:(NSUInteger)month day:(NSUInteger)day;
-- (NSString *)dateWithFormat:(NSString *)format;
++ (NSString *)eq_currentDateStringWithFormat:(NSString *)format;
++ (NSDate *)eq_dateWithSecondsFromNow:(NSInteger)seconds;
++ (NSDate *)eq_dateWithYear:(NSInteger)year month:(NSUInteger)month day:(NSUInteger)day;
+- (NSString *)eq_dateWithFormat:(NSString *)format;
 @end

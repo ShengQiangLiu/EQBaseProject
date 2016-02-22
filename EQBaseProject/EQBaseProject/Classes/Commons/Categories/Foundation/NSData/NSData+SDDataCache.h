@@ -1,11 +1,10 @@
 //
 //  NSData+SDDataCache.h
-//  SDCycleScrollView
+//  EQBaseProject
 //
-//  Created by aier on 15-3-30.
-//  Copyright (c) 2015年 GSD. All rights reserved.
+//  Created by admin on 16/2/21.
+//  Copyright © 2016年 ShengQiangLiu. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 
@@ -16,7 +15,7 @@
  *
  *  @param identifier url.absoluteString
  */
-- (void)saveDataCacheWithIdentifier:(NSString *)identifier;
+- (void)eq_saveDataCacheWithIdentifier:(NSString *)identifier;
 
 /**
  *  取出缓存data
@@ -25,6 +24,6 @@
  *
  *  @return 缓存
  */
-+ (NSData *)getDataCacheWithIdentifier:(NSString *)identifier;
++ (NSData *)eq_getDataCacheWithIdentifier:(NSString *)identifier;
 
 @end
